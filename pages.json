@@ -1,0 +1,71 @@
+{
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarTitleText": "运输记录"
+		}
+	}, {
+		"path": "pages/release/release",
+		"style": {
+			"navigationBarTitleText": "发布"
+		}
+	}, {
+		"path": "pages/myinfo/myinfo",
+		"style": {
+			"navigationBarTitleText": "我"
+		}
+	}, {
+		"path": "pages/release-detail/release-detail",
+		"style": {
+			"navigationBarTitleText": "新建运输单"
+		}
+	}, {
+		"path": "pages/login/login",
+		"style": {
+			"navigationBarTitleText": "登录"
+		}
+	}, {
+		"path": "pages/travel-detail/travel-detail",
+		"style": {
+			"navigationBarTitleText": "运输单详情"
+		}
+	}    ,{
+            "path" : "pages/release-detail-route/release-detail-route",
+            "style" : {
+				"navigationBarTitleText": "选择路线"
+			}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "车辆运输",
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColor": "#FFFFFF",
+		"navigationStyle": "custom"
+	},
+	"tabBar": {
+		// "borderStyle": "black",
+		// "backgroundColor": "#333",
+		"color": "#8F8F94",
+		"selectedColor": "#f33e54",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/img/tabbar/bill.png",
+				"selectedIconPath": "static/img/tabbar/billactive.png",
+				"text": "记录"
+			},
+			{
+				"pagePath": "pages/release/release",
+				"iconPath": "static/img/tabbar/add.png",
+				"selectedIconPath": "static/img/tabbar/addactive.png",
+				"text": "新建"
+			},
+			{
+				"pagePath": "pages/myinfo/myinfo",
+				"iconPath": "static/img/tabbar/me.png",
+				"selectedIconPath": "static/img/tabbar/meactive.png",
+				"text": "我"
+			}
+		]
+	}
+}
