@@ -13,12 +13,12 @@ Vue.prototype.baseUrl = 'http://192.168.0.2:8088/car'
  */
 Vue.prototype.haveToken = function() {
 	let token = this.getCookie('token');
-	let noToken = token=='';
-	if(noToken){
+	let noToken = token == '';
+	if (noToken) {
 		uni.redirectTo({
 			url: '../login/login'
 		});
-	}else {
+	} else {
 		return !noToken;
 	}
 }
@@ -58,12 +58,12 @@ Vue.prototype.getCookie = function(key) {
 
 //清除所有cookie
 Vue.prototype.clearCookie = function() {
-        var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
-        if (keys) {
-            for (var i = keys.length; i--;)
-                document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
-        }
-    }
+	var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+	if (keys) {
+		for (var i = keys.length; i--;)
+			document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+	}
+}
 
 
 Vue.component('page-head', pageHead)
