@@ -56,6 +56,16 @@ Vue.prototype.getCookie = function(key) {
 	return "";
 }
 
+//清除所有cookie
+Vue.prototype.clearCookie = function() {
+        var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+        if (keys) {
+            for (var i = keys.length; i--;)
+                document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+        }
+    }
+
+
 Vue.component('page-head', pageHead)
 Vue.component('page-foot', pageFoot)
 

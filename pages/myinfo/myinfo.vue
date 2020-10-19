@@ -5,6 +5,7 @@
 			<view class="usertext">{{user.nickname}}</view>
 			<view class="usertext">{{user.mobile}}</view>
 			<view class="usertext">{{user.email}}</view>
+			<view class="usertext signout" @click="signout">退出</view>
 		</view>
 	</view>
 </template>
@@ -45,7 +46,12 @@
 			}
 		},
 		methods: {
-			
+			signout: function(e) {
+				this.clearCookie();
+				uni.redirectTo({
+					url: '../login/login'
+				});
+			}
 		}
 	}
 </script>
@@ -65,5 +71,8 @@
 	.usertext{
 		height: 40px;
 		line-height: 40px;
+	}
+	.signout{
+		color: #f33e54;
 	}
 </style>
