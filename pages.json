@@ -29,17 +29,17 @@
 		"style": {
 			"navigationBarTitleText": "运输单详情"
 		}
-	}    ,{
-            "path" : "pages/release-detail-route/release-detail-route",
-            "style" : {
-				"navigationBarTitleText": "选择路线"
-			}
-        }
-        ,{
-            "path" : "pages/release-detail-carinfo/release-detail-carinfo",
-            "style" : {}
-        }
-    ],
+	}, {
+		"path": "pages/release-detail-route/release-detail-route",
+		"style": {
+			"navigationBarTitleText": "选择路线"
+		}
+	}, {
+		"path": "pages/release-detail-carinfo/release-detail-carinfo",
+		"style": {
+			"navigationBarTitleText": "选择车辆"
+		}
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "车辆运输",
