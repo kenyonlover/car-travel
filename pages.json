@@ -35,6 +35,10 @@
 				"navigationBarTitleText": "选择路线"
 			}
         }
+        ,{
+            "path" : "pages/release-detail-carinfo/release-detail-carinfo",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

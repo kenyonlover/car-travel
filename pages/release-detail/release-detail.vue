@@ -29,9 +29,10 @@
 				</view>
 				<view class="uni-form-item uni-column">
 					<view class="title">车牌</view>
-					<picker @change="carInfoPickerChange" :range="carInfoNameArray">
+					<input class="uni-input" v-model="dataForm.carInfoName" @click="carInfoClick" />
+					<!-- <picker @change="carInfoPickerChange" :range="carInfoNameArray">
 						<view class="uni-input">{{dataForm.carInfoName}}</view>
-					</picker>
+					</picker> -->
 				</view>
 				<view class="uni-form-item uni-column">
 					<view class="title">收货日期</view>
@@ -288,33 +289,33 @@
 				/**
 				 * 车辆选择器初始化
 				 */
-				uni.request({
-					url: this.baseUrl + '/h5/carInfoSelect',
-					data: {},
-					header: {
-						'token': this.getCookie('token')
-					},
-					success: res => {
-						if (res && res.data && res.data.code == 0) {
-							let carInfo = res.data.list;
-							for (let g in carInfo) {
-								this.carInfoIdArray.push(carInfo[g].carInfoId);
-								this.carInfoNameArray.push(carInfo[g].carNumber);
-							}
-						} else {
-							uni.showToast({
-								title: res.data.msg,
-								icon: "none"
-							});
-						}
-					},
-					fail: (res, code) => {
-						uni.showToast({
-							title: JSON.stringify(res),
-							icon: "none"
-						});
-					}
-				});
+				// uni.request({
+				// 	url: this.baseUrl + '/h5/carInfoSelect',
+				// 	data: {},
+				// 	header: {
+				// 		'token': this.getCookie('token')
+				// 	},
+				// 	success: res => {
+				// 		if (res && res.data && res.data.code == 0) {
+				// 			let carInfo = res.data.list;
+				// 			for (let g in carInfo) {
+				// 				this.carInfoIdArray.push(carInfo[g].carInfoId);
+				// 				this.carInfoNameArray.push(carInfo[g].carNumber);
+				// 			}
+				// 		} else {
+				// 			uni.showToast({
+				// 				title: res.data.msg,
+				// 				icon: "none"
+				// 			});
+				// 		}
+				// 	},
+				// 	fail: (res, code) => {
+				// 		uni.showToast({
+				// 			title: JSON.stringify(res),
+				// 			icon: "none"
+				// 		});
+				// 	}
+				// });
 				/**
 				 * 计量单位选择器初始化
 				 */
@@ -352,10 +353,10 @@
 				this.dataForm.goodsId = this.goodsIdArray[e.target.value];
 				this.dataForm.goodsName = this.goodsNameArray[e.target.value];
 			},
-			carInfoPickerChange: function(e) {
-				this.dataForm.carInfoId = this.carInfoIdArray[e.target.value];
-				this.dataForm.carInfoName = this.carInfoNameArray[e.target.value];
-			},
+			// carInfoPickerChange: function(e) {
+			// 	this.dataForm.carInfoId = this.carInfoIdArray[e.target.value];
+			// 	this.dataForm.carInfoName = this.carInfoNameArray[e.target.value];
+			// },
 			receiveDatePickerChange: function(e) {
 				this.dataForm.receiveDate = e.detail.value
 			},
@@ -396,6 +397,11 @@
 					});
 					return
 				}
+			},
+			carInfoClick: function(e) {
+				uni.navigateTo({
+					url: '../release-detail-carinfo/release-detail-carinfo'
+				});
 			},
 			formSubmit: function(e) {
 				//定义表单规则
